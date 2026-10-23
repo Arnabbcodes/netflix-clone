@@ -1,0 +1,212 @@
+.home {
+  background-color: #141414;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.banner-img {
+  width: 100%;
+  min-height: 480px;
+  max-height: 85vh;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Authentic Netflix cinematic multi-directional dark gradient */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(77deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 45%, transparent 75%),
+              linear-gradient(180deg, rgba(20, 20, 20, 0.4) 0%, transparent 40%, #141414 100%);
+  pointer-events: none;
+}
+
+.hero-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 20px;
+  z-index: 10;
+  animation: netflixHeroFade 1.2s ease-out;
+}
+
+.caption-img {
+  width: 90%;
+  max-width: 380px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.7));
+}
+
+.hero-description {
+  max-width: 580px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #e5e5e5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  margin-bottom: 22px;
+}
+
+.hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-btns .btn {
+  border: none;
+  outline: none;
+  padding: 10px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hero-btns .btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-btns .btn:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scale(1.02);
+}
+
+.hero-btns .dark-btn {
+  color: #ffffff;
+  background: rgba(109, 109, 110, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.hero-btns .dark-btn:hover {
+  background: rgba(109, 109, 110, 0.45);
+}
+
+.hero-titlecards-wrapper {
+  margin-top: 10px;
+}
+
+.hero-titlecards-wrapper .title-cards {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.more-cards {
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 20;
+}
+
+@keyframes netflixHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVENESS FOR HOME PAGE
+   =============================== */
+@media (max-width: 1024px) {
+  .caption-img {
+    max-width: 320px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-img {
+    min-height: 420px;
+  }
+
+  .caption-img {
+    max-width: 250px;
+    margin-bottom: 14px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    max-width: 90%;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hero-btns {
+    margin-bottom: 20px;
+  }
+
+  .hero-btns .btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+
+  .hero-btns .btn img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner-img {
+    min-height: 380px;
+    object-position: 70% top;
+  }
+
+  .caption-img {
+    max-width: 190px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .hero-btns .btn {
+    padding: 6px 14px;
+    font-size: 13px;
+    gap: 6px;
+  }
+
+  .hero-btns .btn img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .more-cards {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}

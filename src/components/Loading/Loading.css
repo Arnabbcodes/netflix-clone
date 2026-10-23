@@ -1,0 +1,130 @@
+.netflix-loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #080808 65%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: netflixFadeIn 0.35s ease-out forwards;
+  overflow: hidden;
+}
+
+.netflix-loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  transform: scale(1);
+  animation: netflixPulse 2.5s infinite ease-in-out;
+}
+
+.netflix-loader-logo {
+  width: 160px;
+  max-width: 80vw;
+  filter: drop-shadow(0 0 16px rgba(229, 9, 20, 0.45));
+  animation: netflixLogoGlow 2s ease-in-out infinite alternate;
+}
+
+.netflix-spinner-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Authentic Netflix Spinner GIF */
+.netflix-gif-spinner {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(229, 9, 20, 0.7));
+}
+
+/* Secondary glowing circular ring animation */
+.netflix-ring-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3.5px solid transparent;
+  border-top-color: #e50914;
+  border-right-color: rgba(229, 9, 20, 0.3);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.5);
+  animation: netflixSpin 0.9s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+  pointer-events: none;
+}
+
+.netflix-loader-text {
+  color: #b3b3b3;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.85;
+}
+
+@keyframes netflixSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes netflixFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes netflixPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes netflixLogoGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(229, 9, 20, 0.35));
+  }
+  100% {
+    filter: drop-shadow(0 0 24px rgba(229, 9, 20, 0.75));
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .netflix-loader-logo {
+    width: 125px;
+  }
+  .netflix-spinner-wrapper {
+    width: 58px;
+    height: 58px;
+  }
+  .netflix-gif-spinner {
+    width: 54px;
+    height: 54px;
+  }
+  .netflix-loader-text {
+    font-size: 12px;
+  }
+}
